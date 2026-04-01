@@ -37,14 +37,14 @@ export function Navigation() {
           href="https://sharktank-chi.vercel.app/login"
           className="px-5 py-2 text-foreground border border-white/20 rounded-lg hover:border-primary/50 transition"
         >
-          Sign In
+          Get Started
         </Link>
 
         <Link
-          href="https://sharktank-chi.vercel.app/login"
+          href="https://investvault.vercel.app/login"
           className="px-5 py-2 bg-primary text-primary-foreground rounded-lg hover:bg-primary/90 transition glow-effect"
         >
-          Get Started
+          Login
         </Link>
       </div>
       </div>
