@@ -1,7 +1,7 @@
 "use client"
 
-import { motion } from "framer-motion"
-import { useEffect, useState } from "react"
+import { motion, useInView } from "framer-motion"
+import { useEffect, useState, useRef } from "react"
 
 const stats = [
   { value: 2500, label: "Startups Connected" },
@@ -12,8 +12,12 @@ const stats = [
 
 const AnimatedCounter = ({ value, suffix = "" }: { value: number; suffix?: string }) => {
   const [count, setCount] = useState(0)
+  const ref = useRef<HTMLSpanElement>(null)
+  const isInView = useInView(ref, { once: true, amount: 0.5 })
 
   useEffect(() => {
+    if (!isInView) return
+
     let start = 0
     const end = value
     if (start === end) return
@@ -29,13 +33,13 @@ const AnimatedCounter = ({ value, suffix = "" }: { value: number; suffix?: strin
     }, 30)
 
     return () => clearInterval(timer)
-  }, [value])
+  }, [value, isInView])
 
   return (
-    <>
+    <span ref={ref}>
       {count.toLocaleString()}
       {suffix}
-    </>
+    </span>
   )
 }
 
