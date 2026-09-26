@@ -8,7 +8,7 @@ It combines **AI-driven guidance, transparent bidding, and secure account manage
 > **This project leverages two powerful Google technologies — Google Gemini API for AI chatbot & intelligent assistance, and Firebase for secure user authentication and account management.**
 
 
-
+ 
 ## Why Invest Vault?
 
 In today’s ecosystem:
